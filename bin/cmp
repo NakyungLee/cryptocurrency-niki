@@ -1,0 +1,9 @@
+#!/user/bin/env ruby
+
+#welcome the user and lets users what it does
+
+#imagine that i have a class called CLI
+require "bundler/setup"
+require "cryptocurrency"
+
+CLI.new.call
