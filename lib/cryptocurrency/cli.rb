@@ -3,6 +3,7 @@ class CLI
 
   def call
     list_top10
+    sleep 0.5
     select_coin
   end
 
@@ -22,9 +23,7 @@ class CLI
         the_coin = Coin.all.detect {|coin| coin.rank == input.to_i}
         the_coin.print_details
       elsif input == "list"
-        self.list_top10
-        sleep 0.5
-        select_coin
+        self.call
       elsif input == "exit"
         goodbye
       else
