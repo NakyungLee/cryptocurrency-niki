@@ -25,7 +25,7 @@ class Scraper
 
   def self.scrape_details(coin)
     doc = Nokogiri::HTML(open(coin.url))
-    coin.iso_code = doc.css("small.bold").text
+    coin.iso_code = doc.css("small.bold").text.gsub(/[()]/, "")
     coin.website = doc.css(".row .bottom-margin-2x a").attr("href").text
   end
 
