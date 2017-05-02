@@ -8,9 +8,8 @@ class Scraper
     html = "https://coinmarketcap.com/"
     doc = Nokogiri::HTML(open(html))
     i = 0
-    while i < 10 do
+    while i < 9 do
       coin_name = doc.css(".currency-name a")[i].text
-
       c_name_for_id = coin_name.gsub(" ","-").downcase
       coin = Coin.new(coin_name)
       coin.rank = i+1
